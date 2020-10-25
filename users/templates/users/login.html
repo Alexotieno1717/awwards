@@ -1,27 +1,15 @@
+{% extends 'awward/base.html' %}
 {% load crispy_forms_tags %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-     <!-- Bootstrap CSS CDN -->
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-     <!-- Our Custom CSS -->
-     <link rel="stylesheet" type="text/css" href="#">
-     <!-- Scrollbar Custom CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-</head>
-<body>
+{% block content%}
     <div class="container">
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <div class="content-section">
+                <div class="login-section">
                     <form method="POST">
                         {% csrf_token %}
                         <fieldset class="form-group">
-                            <legend class="border-bottom mb-4">Log In</legend>
+                            <legend class="border-bottom mb-4 login-title">Log In</legend>
                             {{ form|crispy }}
                         </fieldset>
                         <div class="form-group">
@@ -29,12 +17,11 @@
                         </div>
                     </form>
                     <div class="border-top pt-3">
-                        <small class="text-muted">Need an account? <a class="ml-2" href="{% url 'register' %}">Sign up now</a></small>
+                        <h6 class="text-muted">Need an account? <a class="ml-2 text-info" href="{% url 'register' %}">Sign up now</a></h6>
                     </div>
                 </div>
             </div>
             <div class="col-md-2"></div>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
