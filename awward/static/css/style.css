@@ -212,3 +212,13 @@ a.article:hover {
     text-align: center;
     padding-top: 10px;
 }
+
+.menu-icon{
+    cursor: pointer;
+}
+
+.submit-site{
+    background: #49c5b6;
+    border-radius: 2px;
+}
+

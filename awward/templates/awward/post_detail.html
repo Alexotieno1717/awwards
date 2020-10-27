@@ -1,0 +1,22 @@
+{% extends 'awward/base.html' %}
+
+{% block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mt-3 card-custom">
+                <div class="card-body">
+                    <img src="{{ object.image.url }}" alt="" class="img-responsive" width="100%">
+                    <h6 class="article-title">{{ object.title }} </h6>
+                    <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+                </div>
+                <div class="card-footer">
+                    <img class="rounded-circle article-img" width="30" height="30" src="{{ object.author.profile.image.url }}" alt="">
+                    <a class="mr-2" href="#">{{ object.author }}</a>
+                    <p>{{ object.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

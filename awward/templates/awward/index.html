@@ -1,8 +1,31 @@
 {% extends 'awward/base.html' %}
 
 {% block content%}
+<div class="container-fluid">
+    <div class="random-backround" style="height: 450px; width: 100%;  background-image: url('{{ random_post.image.url}}');"></div>
+</div>
 <div class="container">
     <h2>Awward website</h2>
     <a href="#">moringa</a>
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-4">
+            
+            <div class="card mt-3 card-custom">
+                <div class="card-body">
+                    <img src="{{ post.image.url }}" alt="" class="img-responsive" width="100%">
+                    <h6><a class="article-title" href="{% url 'post-detail' post.id %}"> <span class="author1">{{ post.author }}</span> {{ post.title }}</a></h6>
+                    <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                </div>
+                <div class="card-footer">
+                    <img class="rounded-circle article-img" width="30" height="30" src="{{ post.author.profile.image.url }}" alt="">
+                    <a class="mr-2" href="#">{{ post.author }}</a>
+                    <a href="{{ post.image_url }}" class="btn btn-sm btn-info">visit site</a>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
