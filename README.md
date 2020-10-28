@@ -43,3 +43,6 @@ Now Migrate
 * Python3.8
 * Django 3.1.2
 * Heroku
+
+#### Known Bugs
+The project did not work properly as expected, the ratings
