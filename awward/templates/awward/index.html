@@ -2,26 +2,40 @@
 
 {% block content%}
 <div class="container-fluid">
-    <div class="random-backround" style="height: 450px; width: 100%;  background-image: url('{{ random_post.image.url}}');"></div>
+    <div class="random-backround" style="height: 450px; width: 100%;  background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('{{ random_post.image.url}}');">
+        <div class="container">
+            <div class="banner-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-white pt-4">Site of the Day {{ random_post.date_posted|date:"F d, Y" }}</p>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="banner-subtitle">
+                            <h2 class="text-white"> {{ random_post.title }}</h2>
+                            <p class="text-white">By {{ random_post.author }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 pt-5 mt-5">
+                        <a href="{{ random_post.image_url }}" class="btn btn-sm btn-info" target="_blank">visit site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="container">
-    <h2>Awward website</h2>
-    <a href="#">moringa</a>
     <div class="row">
         {% for post in posts %}
         <div class="col-md-4">
             
-            <div class="card mt-3 card-custom">
-                <div class="card-body">
-                    <img src="{{ post.image.url }}" alt="" class="img-responsive" width="100%">
-                    <h6><a class="article-title" href="{% url 'post-detail' post.id %}"> <span class="author1">{{ post.author }}</span> {{ post.title }}</a></h6>
-                    <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-                </div>
-                <div class="card-footer">
-                    <img class="rounded-circle article-img" width="30" height="30" src="{{ post.author.profile.image.url }}" alt="">
-                    <a class="mr-2" href="#">{{ post.author }}</a>
-                    <a href="{{ post.image_url }}" class="btn btn-sm btn-info">visit site</a>
-                </div>
+            <div class="card-body mt-3 card-custom bg-white">
+                <a href="{% url 'post-detail' post.id %}"><img src="{{ post.image.url }}" alt="" class="img-responsive" width="100%"></a>
+                <h6 class="pt-2"><a class="article-title" href="{% url 'post-detail' post.id %}"> <span class="author1">{{ post.author }}</span> ~ {{ post.title }}</a></h6>
+                <a href="{{ post.image_url }}" class="btn btn-sm btn-info" target="_blank">visit site</a>
+                <hr>
+                <img class="rounded-circle article-img" width="30" height="30" src="{{ post.author.profile.image.url }}" alt="">
+                <a class="mr-2" href="#">{{ post.author }}</a>
+                <small class="text-muted post-date">{{ post.date_posted|date:"F d, Y" }}</small>
             </div>
             
         </div>

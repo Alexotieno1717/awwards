@@ -16,11 +16,11 @@ def index(request):
         posts = None
     return render(request, 'awward/index.html', locals())
 
-# class PostListView(ListView):
-#     model = Post
-#     template_name = 'awward/index.html'
-#     context_object_name = 'posts'
-#     ordering = ['-date_posted']
+class PostListView(ListView):
+    model = Post
+    template_name = 'awward/index.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
 
 class PostDetailView(DetailView):
     model = Post

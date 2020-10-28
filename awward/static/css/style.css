@@ -222,3 +222,21 @@ a.article:hover {
     border-radius: 2px;
 }
 
+.banner-subtitle{
+    text-align: center;
+    padding-top: 10%;
+}
+
+.post-date{
+    float: right;
+}
+
+.navbar-nav-custom{
+    padding-left: 40%;
+}
+
+.awwards-logo{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
