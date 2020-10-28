@@ -12,7 +12,7 @@ def index(request):
         one_post = random.randint(0, len(posts)-1)
         random_post = posts[one_post]
         print(random_post)
-    except Post.DoesNotExit:
+    except:
         posts = None
     return render(request, 'awward/index.html', locals())
 
