@@ -46,3 +46,6 @@ Now Migrate
 
 #### Known Bugs
 The project did not work properly as expected, the ratings
+
+#### Contact Information
+If you have any question or contributions, please email me at alexotieno900@gmail.com
