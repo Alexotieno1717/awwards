@@ -2,10 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Post(models.Model):
-    image = models.ImageField(upload_to='posts/')
+    image = CloudinaryField('image')
     title = models.CharField(max_length=100)
     description = models.TextField()
     image_url = models.URLField(max_length=200)
