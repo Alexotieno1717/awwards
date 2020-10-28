@@ -19,23 +19,23 @@ Click https://alex-awwards.herokuapp.com/ to visit the site
 #### Setup and Installation
 
 * Cloning the repository:
-    https://github.com/Alexotieno1717/awwards
+    * https://github.com/Alexotieno1717/awwards
 
 * Navigate into the folder and install requirements
-    cd awwards pip install -r requirements.txt 
+    * cd awwards pip install -r requirements.txt 
 
 * Install and activate Virtual
-    python3 -m venv virtual - source virtual/bin/activate  
+    * python3 -m venv virtual - source virtual/bin/activate  
 
 * Setup Database
-SetUp your database User,Password, Host then make migrate
-    python manage.py makemigrations
+* SetUp your database User,Password, Host then make migrate
+    * python manage.py makemigrations
 
-Now Migrate
-    python manage.py migrate 
+* Now Migrate
+    * python manage.py migrate 
 
 * Run the application
-    python manage.py runserver 
+    * python manage.py runserver 
 
 * Open the application on your browser 127.0.0.1:8000.
 
